@@ -1,0 +1,21 @@
+
+    <div class="card m-3" *ngFor="let employee of employees">
+        <div class="card-header">
+        {{ employee.name }}
+        </div>
+        <div class="card-body">
+          <div class="col-sm-10">
+              <div class="row">
+                  <div class="col sm-4">
+                      <img class="img-fluid" [src]="employee.photoPath" alt="emp">
+                  </div>
+                  <div class="col sm-4">
+                    hello
+                </div>
+                <div class="col sm-4">
+                    hello
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>

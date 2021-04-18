@@ -4,7 +4,7 @@ export class Employee {
     gender: string;
     email?: string;
     phoneNumber?: number;
-    contactReference: string;
+    contactPreference: string;
     dateOfBirth: Date;
     department: string;
     isActive: boolean;
