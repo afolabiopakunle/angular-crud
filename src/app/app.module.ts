@@ -5,7 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListEmployeesComponent } from './employees/list-employees.component';
 import { CreateEmployeeComponent } from './employees/create-employee.component';
+import { Router, RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  { path: 'employees-list', component: ListEmployeesComponent},
+  { path: 'create-employees', component: CreateEmployeeComponent},
+  { path: '', redirectTo: '/employees-list', pathMatch: 'full'},
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +20,8 @@ import { CreateEmployeeComponent } from './employees/create-employee.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
