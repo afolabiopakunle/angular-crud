@@ -1,23 +1,31 @@
 <div class="row">
     <div class="col-md-6">
         <div class="card">
-            <div class="card-header">
-                Create Employee
+            <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+            <div class="card-header text-white bg-primary">
+                Create <u>Employee</u>
             </div>
             <div class="card-body">
-                <form>
                     <div class="form-group">
-                        <label for="email">Full Name</label>
-                        <input type="text" class="form-control" id="email" aria-describedby="emailWarning"
+                        <label for="fullName">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" name='fullName' [(ngModel)]="fullName" aria-describedby="fullNameWarning"
                             placeholder="Enter full name">
+                        <!-- <small id="fullNameWarning" class="form-text text-danger">We'll never share your email with anyone
+                            else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="text" class="form-control" name="email" [(ngModel)]="email" id="email" aria-describedby="emailWarning"
+                            placeholder="Enter email address">
                         <!-- <small id="emailWarning" class="form-text text-danger">We'll never share your email with anyone
                             else.</small> -->
                     </div>
-                </form>
-            </div>
-            <div class="card-footer text-muted">
-                <a href="#" class="btn btn-primary">Create Employee</a>
-            </div>
+                </div>
+                <div class="card-footer text-muted text-right">
+                    <button type="submit" href="#" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+{{ employeeForm.value | json }}
