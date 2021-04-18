@@ -1,21 +1,30 @@
-
-    <div class="card m-3" *ngFor="let employee of employees">
-        <div class="card-header">
-        {{ employee.name }}
-        </div>
-        <div class="card-body">
-          <div class="col-sm-10">
-              <div class="row">
-                  <div class="col sm-4">
-                      <img class="img-fluid" [src]="employee.photoPath" alt="emp">
-                  </div>
-                  <div class="col sm-4">
-                    hello
+<div class="card m-3" *ngFor="let employee of employees">
+    <div class="card-header">
+        <h3 class="pl-5">{{ employee.name }} </h3>
+    </div>
+    <div class="card-body">
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img class="img-fluid" [src]="employee.photoPath" alt="emp">
                 </div>
-                <div class="col sm-4">
-                    hello
+                <div class="col-sm-3">
+                    <p><strong>Name:</strong></p>
+                    <p><strong>Department:</strong></p>
+                    <p><strong>Phone number:</strong></p>
+                    <p><strong>Date of birth:</strong></p>
+                    <p><strong>Contact preference:</strong></p>
+                    <p><strong>Is Active:</strong></p>
                 </div>
-              </div>
-          </div>
+                <div class="col-sm-4">
+                    <p>{{ employee.name }}</p>
+                    <p>{{ employee.department }}</p>
+                    <p>{{ employee.phoneNumber }}</p>
+                    <p>{{ employee.dateOfBirth | date }}</p>
+                    <p>{{ employee.contactPreference }}</p>
+                    <p>{{ employee.isActive }}</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+</div>
