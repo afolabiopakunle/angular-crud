@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-employee',
@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 export class CreateEmployeeComponent implements OnInit {
   fullName;
   email;
+  employeeForm;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(employeeForm) {
-    console.log(employeeForm);
+  onSubmit(employeeForm: NgForm) {
+    console.log(employeeForm.value);
+    employeeForm.reset()
   }
 
 }
